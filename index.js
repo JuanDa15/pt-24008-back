@@ -19,4 +19,5 @@ app.listen(process.env.PORT || 3000, () => {
   console.log(`Server Running in PORT: ${process.env.PORT || 3000}`)
 })
 
-export default app
+
+module.exports = app

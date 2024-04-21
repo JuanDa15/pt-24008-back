@@ -90,7 +90,6 @@ const getOrder = async (req = request, res = response) => {
 async function validateProducts(products, res = response) {
   return new Promise((resolve) => {
     let totalPrice = 0;
-    console.log(products)
     const temp = products.map(async (productDTO) => {
       const product = await Product.findById(productDTO.product);
 

@@ -12,8 +12,7 @@ const allowedOrigins = [
   'http://localhost:4200',
   '127.0.0.1:4200'
 ]
-
-app.use(cors({
+app.options('*', cors({
   origin: allowedOrigins
 }))
 

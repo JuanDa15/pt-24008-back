@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "node --watch index.js",
     "test": "npm run test",
-    "build": "webpack",
-    "vercel-build": "echo hello"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

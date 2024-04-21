@@ -7,7 +7,15 @@ const app = express()
 
 dbConnection()
 
-app.use(cors())
+const allowedOrigins = [
+  'https://pt-24008-front.vercel.app', //PROD,
+  'http://localhost:4200',
+  '127.0.0.1:4200'
+]
+
+app.use(cors({
+  origin: allowedOrigins
+}))
 
 app.use(express.json())
 

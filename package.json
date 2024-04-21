@@ -1,0 +1,40 @@
+{
+  "name": "pt-24008-back",
+  "version": "1.0.0",
+  "description": "Backent for technical test",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "npm run test",
+    "build": "webpack",
+    "vercel-build": "echo hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanDa15/pt-24008-back.git"
+  },
+  "keywords": [
+    "expressJs",
+    "nodeJs",
+    "MongoDB"
+  ],
+  "author": "juan david osorio <Juanda15>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanDa15/pt-24008-back/issues"
+  },
+  "homepage": "https://github.com/JuanDa15/pt-24008-back#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -10,9 +10,10 @@ dbConnection()
 const allowedOrigins = [
   'https://pt-24008-front.vercel.app', //PROD,
   'http://localhost:4200',
-  '127.0.0.1:4200'
+  'http://127.0.0.1:4200'
 ]
-app.options('*', cors({
+
+app.use(cors({
   origin: allowedOrigins
 }))
 

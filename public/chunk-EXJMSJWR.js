@@ -1,0 +1,1 @@
+import{a as o}from"./chunk-5MDO62B3.js";import{ka as t,o as r}from"./chunk-EDOQMP4J.js";var c=()=>{let e=r(o),s=r(t);return e.user()??localStorage.getItem(e.STORAGE_USER_NAME)??""?!0:(s.navigateByUrl("/auth/login",{replaceUrl:!0}),!1)};export{c as a};

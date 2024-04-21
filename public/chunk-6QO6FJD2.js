@@ -1,0 +1,1 @@
+import{t as a}from"./chunk-EDOQMP4J.js";var p=(()=>{let t=class t{transform(i=[]){return i.reduce((r,n)=>r+n.product.price*n.quantity,0)}};t.\u0275fac=function(r){return new(r||t)},t.\u0275pipe=a({name:"totalOrder",type:t,pure:!0,standalone:!0});let e=t;return e})();export{p as a};

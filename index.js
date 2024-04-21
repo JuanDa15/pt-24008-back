@@ -8,7 +8,7 @@ const app = express()
 dbConnection()
 
 const allowedOrigins = [
-  'https://pt-24008-front.vercel.app', //PROD,
+  'https://pt-24008-front.vercel.app', 
   'http://localhost:4200',
   'http://127.0.0.1:4200'
 ]

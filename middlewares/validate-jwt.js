@@ -1,5 +1,6 @@
 const {request} = require('express');
 const {verify} = require('jsonwebtoken');
+const httpResponse = require('../utils/http-response');
 
 const validateJWT = (req = request, res, next) => {
   const [_, token] = (req.header('authorization') ?? '').split(' ');
@@ -18,10 +19,7 @@ const validateJWT = (req = request, res, next) => {
 
     next();
   } catch (error) {
-    return res.status(401).json({
-      ok: false,
-      msg: 'Invalid or expired token',
-    });
+    return res.status(401).json(httpResponse(false, 'Invalid or expired token'));
   }
 };
 

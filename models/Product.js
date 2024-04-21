@@ -20,6 +20,7 @@ const ProductSchema = Schema(
     },
     image: {
       type: String,
+      required: true,
     }
   },
   {

@@ -18,6 +18,7 @@ router.post('/', [
   check('description', 'Description is required').not().isEmpty(),
   check('stock', 'Stock is required').not().isEmpty(),
   check('stock', 'Stock must be a number').isNumeric(),
+  check('image', 'Image is required').not().isEmpty(),
   checkBody
 ],createProduct)
 
@@ -30,6 +31,7 @@ router.put('/:id', [
   check('description', 'Description is required').not().isEmpty(),
   check('stock', 'Stock is required').not().isEmpty(),
   check('stock', 'Stock must be a number').isNumeric(),
+  check('image', 'Image is required').not().isEmpty(),
   checkBody
 ] , updateProduct)
 

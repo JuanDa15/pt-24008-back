@@ -43,6 +43,13 @@ const createOrder = async (req = request, res = response) => {
     const totalPrice = await validateProducts(products, res);
 
     const order = new Order({ products, user: uid, totalPrice });
+    const productsToUpdate = products.map(async (product) => {
+      const productToUpdate = await Product.findById(product.product);
+      productToUpdate.stock -= product.quantity;
+      return productToUpdate.save();
+    })
+
+    await Promise.all(productsToUpdate);
 
     await order.save();
 
@@ -83,6 +90,7 @@ const getOrder = async (req = request, res = response) => {
 async function validateProducts(products, res = response) {
   return new Promise((resolve) => {
     let totalPrice = 0;
+    console.log(products)
     const temp = products.map(async (productDTO) => {
       const product = await Product.findById(productDTO.product);
 
@@ -100,9 +108,11 @@ async function validateProducts(products, res = response) {
       }
       return product;
     });
-    Promise.all(temp).then((products) => {
-      products.forEach((product) => {
-        totalPrice += product.price;
+    Promise.all(temp).then((productsPromises) => {
+      productsPromises.forEach((product) => {
+        const { quantity } = products.find((p) => p.product === product._id.toString())
+ 
+        totalPrice += product.price * quantity;
       });
       resolve(totalPrice);
     });
